@@ -73,7 +73,6 @@ export default function AIAssistant() {
   const handleQuickAction = (text) => {
     handleSend(text);
   };
-
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-slate-100 p-4 md:p-8">
       <div className="max-w-4xl mx-auto space-y-6">
