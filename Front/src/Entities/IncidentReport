@@ -1,0 +1,71 @@
+{
+  "name": "IncidentReport",
+  "type": "object",
+  "properties": {
+    "incident_type": {
+      "type": "string",
+      "enum": [
+        "medical",
+        "fire",
+        "theft",
+        "harassment",
+        "accident",
+        "other"
+      ],
+      "description": "Type of incident"
+    },
+    "location": {
+      "type": "object",
+      "properties": {
+        "latitude": {
+          "type": "number"
+        },
+        "longitude": {
+          "type": "number"
+        },
+        "area_name": {
+          "type": "string"
+        }
+      },
+      "description": "Incident location"
+    },
+    "severity": {
+      "type": "string",
+      "enum": [
+        "minor",
+        "moderate",
+        "serious",
+        "critical"
+      ],
+      "description": "Incident severity"
+    },
+    "description": {
+      "type": "string",
+      "description": "Brief description"
+    },
+    "timestamp": {
+      "type": "string",
+      "format": "date-time",
+      "description": "When it occurred"
+    },
+    "was_resolved": {
+      "type": "boolean",
+      "default": false,
+      "description": "Resolution status"
+    },
+    "response_time_minutes": {
+      "type": "number",
+      "description": "How long until help arrived"
+    },
+    "anonymized": {
+      "type": "boolean",
+      "default": true,
+      "description": "Whether user details are hidden"
+    }
+  },
+  "required": [
+    "incident_type",
+    "location",
+    "severity"
+  ]
+}

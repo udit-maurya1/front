@@ -1,0 +1,86 @@
+{
+  "name": "Helper",
+  "type": "object",
+  "properties": {
+    "user_id": {
+      "type": "string",
+      "description": "Reference to User entity"
+    },
+    "name": {
+      "type": "string",
+      "description": "Helper name"
+    },
+    "phone": {
+      "type": "string",
+      "description": "Contact number"
+    },
+    "helper_type": {
+      "type": "string",
+      "enum": [
+        "volunteer",
+        "guardian",
+        "ex_police",
+        "medical",
+        "security",
+        "citizen"
+      ],
+      "description": "Type of helper"
+    },
+    "location": {
+      "type": "object",
+      "properties": {
+        "latitude": {
+          "type": "number"
+        },
+        "longitude": {
+          "type": "number"
+        },
+        "city": {
+          "type": "string"
+        }
+      },
+      "description": "Helper location"
+    },
+    "is_verified": {
+      "type": "boolean",
+      "default": false,
+      "description": "Verification status"
+    },
+    "rating": {
+      "type": "number",
+      "default": 5,
+      "description": "Average rating (1-5)"
+    },
+    "total_responses": {
+      "type": "number",
+      "default": 0,
+      "description": "Number of emergencies responded to"
+    },
+    "availability_status": {
+      "type": "string",
+      "enum": [
+        "available",
+        "busy",
+        "offline"
+      ],
+      "default": "available",
+      "description": "Current availability"
+    },
+    "specializations": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Areas of expertise"
+    },
+    "verification_document_url": {
+      "type": "string",
+      "description": "ID verification document"
+    }
+  },
+  "required": [
+    "name",
+    "phone",
+    "helper_type"
+  ]
+}

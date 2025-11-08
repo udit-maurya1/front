@@ -1,0 +1,43 @@
+{
+  "name": "TrustedContact",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "Contact name"
+    },
+    "phone": {
+      "type": "string",
+      "description": "Contact phone number"
+    },
+    "email": {
+      "type": "string",
+      "description": "Contact email"
+    },
+    "relationship": {
+      "type": "string",
+      "enum": [
+        "family",
+        "friend",
+        "colleague",
+        "neighbor",
+        "other"
+      ],
+      "description": "Relationship to user"
+    },
+    "priority": {
+      "type": "number",
+      "default": 1,
+      "description": "Alert priority (1=highest)"
+    },
+    "is_verified": {
+      "type": "boolean",
+      "default": false,
+      "description": "Whether contact confirmed"
+    }
+  },
+  "required": [
+    "name",
+    "phone"
+  ]
+}

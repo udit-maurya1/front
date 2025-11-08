@@ -1,0 +1,68 @@
+{
+  "name": "DangerZone",
+  "type": "object",
+  "properties": {
+    "zone_name": {
+      "type": "string",
+      "description": "Name of the area"
+    },
+    "location": {
+      "type": "object",
+      "properties": {
+        "latitude": {
+          "type": "number"
+        },
+        "longitude": {
+          "type": "number"
+        },
+        "radius": {
+          "type": "number"
+        }
+      },
+      "description": "Zone center and coverage"
+    },
+    "risk_level": {
+      "type": "string",
+      "enum": [
+        "low",
+        "medium",
+        "high",
+        "critical"
+      ],
+      "description": "Danger level"
+    },
+    "incident_count": {
+      "type": "number",
+      "default": 0,
+      "description": "Number of incidents reported"
+    },
+    "common_incidents": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Common incident types"
+    },
+    "peak_hours": {
+      "type": "string",
+      "description": "Most dangerous time periods"
+    },
+    "safety_tips": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Recommendations for this area"
+    },
+    "last_incident_date": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Most recent incident"
+    }
+  },
+  "required": [
+    "zone_name",
+    "location",
+    "risk_level"
+  ]
+}

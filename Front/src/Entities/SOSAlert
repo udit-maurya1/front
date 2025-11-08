@@ -1,0 +1,85 @@
+{
+  "name": "SOSAlert",
+  "type": "object",
+  "properties": {
+    "user_name": {
+      "type": "string",
+      "description": "Name of the person in emergency"
+    },
+    "user_phone": {
+      "type": "string",
+      "description": "Contact number"
+    },
+    "incident_type": {
+      "type": "string",
+      "enum": [
+        "medical",
+        "fire",
+        "theft",
+        "harassment",
+        "accident",
+        "other"
+      ],
+      "description": "Type of emergency"
+    },
+    "location": {
+      "type": "object",
+      "properties": {
+        "latitude": {
+          "type": "number"
+        },
+        "longitude": {
+          "type": "number"
+        },
+        "address": {
+          "type": "string"
+        }
+      },
+      "description": "Emergency location"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "active",
+        "responded",
+        "resolved",
+        "false_alarm"
+      ],
+      "default": "active",
+      "description": "Alert status"
+    },
+    "alert_radius": {
+      "type": "number",
+      "default": 500,
+      "description": "Current alert radius in meters"
+    },
+    "response_time": {
+      "type": "string",
+      "format": "date-time",
+      "description": "When someone responded"
+    },
+    "responders": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "User IDs who responded"
+    },
+    "audio_recording_url": {
+      "type": "string",
+      "description": "Audio evidence URL"
+    },
+    "video_recording_url": {
+      "type": "string",
+      "description": "Video evidence URL"
+    },
+    "notes": {
+      "type": "string",
+      "description": "Additional details"
+    }
+  },
+  "required": [
+    "incident_type",
+    "location"
+  ]
+}
